@@ -10,10 +10,8 @@ export default function handler(req, res) {
   // Normalize input
   const user = (username || "").toLowerCase();
 
-  // Simulated SQL injection patterns
-  const sqlInjection =
-    user.includes("admin'--") ||
-    
+  // Require exact username
+  const sqlInjection = user === "admin'--";
 
   if (
     (username === "cupid" && password === "love123") ||
