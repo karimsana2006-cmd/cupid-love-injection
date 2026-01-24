@@ -12,9 +12,8 @@ export default function handler(req, res) {
 
   // Simulated SQL injection patterns
   const sqlInjection =
-    user.includes("'--") ||
-    user.includes("' or 1=1") ||
-    user.includes("--");
+    user.includes("admin'--") ||
+    
 
   if (
     (username === "cupid" && password === "love123") ||
